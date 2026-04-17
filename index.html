@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Figma Converter | Detroit Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Figma<span>Converter</span></h2>
+            <nav>
+                <button class="nav-btn active" onclick="switchTab('mta')">MTA (Lua)</button>
+                <button class="nav-btn" onclick="switchTab('cpp')">C++ (ImGui)</button>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <header>
+                <h1 id="tab-title">Conversor Figma para MTA</h1>
+                <p>Otimizado para interfaces Detroit e sistemas complexos.</p>
+            </header>
+
+            <section class="config-panel">
+                <div class="input-group">
+                    <label>Figma API Token</label>
+                    <input type="password" id="figma-token" placeholder="Insira seu Token...">
+                </div>
+                <div class="input-group">
+                    <label>File Key</label>
+                    <input type="text" id="file-key" placeholder="URL ou Key do projeto...">
+                </div>
+                <button class="btn-primary" onclick="startConversion()">Gerar Código</button>
+            </section>
+
+            <section class="output-panel">
+                <div class="header-output">
+                    <span>Código Gerado:</span>
+                    <button class="btn-copy" onclick="copyCode()">Copiar Tudo</button>
+                </div>
+                <pre id="code-output" class="code-box">O código aparecerá aqui após a conversão...</pre>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
