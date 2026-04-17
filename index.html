@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Figma Converter | Detroit Edition</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
@@ -18,28 +19,22 @@
 
         <main class="content">
             <header>
-                <h1 id="tab-title">Conversor Figma para MTA</h1>
-                <p>Otimizado para interfaces Detroit e sistemas complexos.</p>
+                <h1>Conversor de Design</h1>
+                <p>Cole o JSON do seu Frame abaixo para gerar o código instantaneamente.</p>
             </header>
 
             <section class="config-panel">
-                <div class="input-group">
-                    <label>Figma API Token</label>
-                    <input type="password" id="figma-token" placeholder="Insira seu Token...">
-                </div>
-                <div class="input-group">
-                    <label>File Key</label>
-                    <input type="text" id="file-key" placeholder="URL ou Key do projeto...">
-                </div>
-                <button class="btn-primary" onclick="startConversion()">Gerar Código</button>
+                <label style="color: #888; font-size: 0.8rem; display: block; margin-bottom: 10px;">JSON do Figma (Copie o Frame e use o comando no Console)</label>
+                <textarea id="figma-json" placeholder="Cole aqui o resultado do comando: copy(figma.currentPage.selection[0])"></textarea>
+                <button class="btn-primary" onclick="processJSON()">Gerar Código</button>
             </section>
 
             <section class="output-panel">
                 <div class="header-output">
-                    <span>Código Gerado:</span>
-                    <button class="btn-copy" onclick="copyCode()">Copiar Tudo</button>
+                    <span id="label-output">Resultado:</span>
+                    <button class="btn-copy" onclick="copyCode()">Copiar Código</button>
                 </div>
-                <pre id="code-output" class="code-box">O código aparecerá aqui após a conversão...</pre>
+                <pre id="code-output" class="code-box">Aguardando JSON...</pre>
             </section>
         </main>
     </div>
